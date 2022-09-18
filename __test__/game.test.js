@@ -3,6 +3,7 @@ const fs = require('fs')
 
 describe('App', () => {
   it('Contains the compiled JavaScript', async (done) => {
+    jest.setTimeout(50000);
     fs.readFile('./public/main.js', 'utf8', (err, data) => {
       expect(err).toBe(null)
       expect(data).toMatchSnapshot()
